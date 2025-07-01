@@ -1,13 +1,18 @@
 function getComputerChoice() {
-    let number = Math.floor(Math.random() * 3);
+    let computerChoice = Math.floor(Math.random() * 3);
 
-    if (number === 0) {
+    if (computerChoice === 0) {
         return "rock";
-    } else if (number === 1) {
+    } else if (computerChoice === 1) {
         return "paper";
     } else {
         return "scissors";
     }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    let humanChoice = prompt("Please enter rock, paper or scissors:");
+    return humanChoice;
+}
+
+console.log(getHumanChoice());
