@@ -15,4 +15,5 @@ function getHumanChoice() {
     return humanChoice;
 }
 
-console.log(getHumanChoice());
+let humanScore = 0;
+let computerScore = 0;
