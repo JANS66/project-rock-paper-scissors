@@ -11,7 +11,11 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let humanChoice = prompt("Please enter rock, paper or scissors:");
+    let humanChoice = prompt("Please enter rock, paper or scissors:").toLowerCase();
+    while (!["rock", "paper", "scissors"].includes(humanChoice)) {
+        humanChoice = prompt("Invalid input. Please enter rock, paper, or scissors:").toLowerCase();
+    }
+
     return humanChoice;
 }
 
@@ -57,7 +61,7 @@ function printFinalResult() {
 }
 
 function playRound() {
-    let humanChoice = getHumanChoice().toLowerCase();
+    let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice();
 
     console.log(determineWinner(humanChoice, computerChoice));
