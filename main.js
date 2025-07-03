@@ -43,15 +43,8 @@ function getHumanChoice() {
 }
 
 function getComputerChoice() {
-    let computerChoice = Math.floor(Math.random() * 3);
-
-    if (computerChoice === 0) {
-        return "rock";
-    } else if (computerChoice === 1) {
-        return "paper";
-    } else {
-        return "scissors";
-    }
+    const choices = ["rock", "paper", "scissors"];
+    return choices[Math.floor(Math.random() * 3)];
 }
 
 function playRound() {
