@@ -1,2 +1,4 @@
 # project-rock-paper-scissors
 Odin rock paper scissors project
+
+First of all i divided goal of this assignment into smaller steps and wrote step by step pseudo code on paper how to accomplish it, by writing it down in plain english i noticed some spaces where i can do it more simple way, so it was nice surprise that by just writing it down i can already notice something what i can do better. Then i successfully translated written down english to code, something i remembered easily, some time had to google for syntax. After accomplishing the exercises goals, i used AI for evaluation, AI helped me to detect places in code that i can do better, and told me about best practices, for example to divide function functionality, one function does one task, so i did that, also i implemented while loop and arrays. I see what i can do better in next project, try to divide goal into even more simple steps, every little task has its own function. 
