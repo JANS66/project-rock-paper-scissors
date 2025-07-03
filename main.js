@@ -49,6 +49,16 @@ function printResult() {
     return `Human ${humanScore} - ${computerScore} Computer`;
 }
 
+function printFinalResult() {
+    if (humanScore > computerScore) {
+        return console.log("You win the game!");
+    } else if (humanScore < computerScore) {
+        return console.log("Computer wins the game!");
+    } else {
+        return console.log("The game is a tie!");
+    }
+}
+
 function playRound() {
     console.log(determineWinner());
     console.log(printResult());
@@ -58,6 +68,7 @@ function playGame() {
     for (let i = 0; i <= 4; i++) {
         playRound();
     }
+    printFinalResult();
 }
 
 playGame();
