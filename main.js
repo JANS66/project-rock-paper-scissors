@@ -33,22 +33,21 @@ function determineWinner(humanChoice, computerChoice) {
     }
 }
 
-function getHumanChoice() {
-    let humanChoice = prompt("Please enter rock, paper or scissors:").toLowerCase();
-    while (!["rock", "paper", "scissors"].includes(humanChoice)) {
-        humanChoice = prompt("Invalid input. Please enter rock, paper, or scissors:").toLowerCase();
-    }
+// function getHumanChoice() {
+//     let humanChoice = prompt("Please enter rock, paper or scissors:").toLowerCase();
+//     while (!["rock", "paper", "scissors"].includes(humanChoice)) {
+//         humanChoice = prompt("Invalid input. Please enter rock, paper, or scissors:").toLowerCase();
+//     }
 
-    return humanChoice;
-}
+//     return humanChoice;
+// }
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     return choices[Math.floor(Math.random() * 3)];
 }
 
-function playRound() {
-    let humanChoice = getHumanChoice();
+function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
     let winner = determineWinner(humanChoice, computerChoice);
     if (winner === "tie") {
@@ -64,10 +63,14 @@ function playRound() {
 }
 
 function playGame() {
-    for (let i = 0; i < 5; i++) {
-        playRound();
-    }
-    console.log(printFinalResult());
-}
+    const buttons = document.querySelectorAll("button");
+
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function(event) {
+            const value = event.target.id;
+            playRound(value);
+        });
+    });
+};
 
 playGame();
