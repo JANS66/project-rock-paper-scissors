@@ -15,13 +15,10 @@ function printFinalResult() {
 }
 
 function printResult() {
-    const result = document.createElement("p");
+    const result = document.querySelector("#score-display");
     result.textContent = `Human ${humanScore} - ${computerScore} Computer`;
-    resultDiv.appendChild(result);
+    resultDiv.insertBefore(result, resultDiv.firstChild);
 }
-
-let humanScore = 0;
-let computerScore = 0;
 
 function determineWinner(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
@@ -66,8 +63,11 @@ function playRound(humanChoice) {
         result.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
         resultDiv.appendChild(result);
     }
-    console.log(printResult());
+    printResult();
 }
+
+let humanScore = 0;
+let computerScore = 0;
 
 function playGame() {
     const buttons = document.querySelectorAll("button");
@@ -76,8 +76,12 @@ function playGame() {
         button.addEventListener("click", function (event) {
             const value = event.target.id;
             playRound(value);
+
+            if (humanScore === 5 || computerScore === 5) {
+                printFinalResult();
+                buttons.forEach(button => button.disabled = true);
+            }
         });
     });
 };
-
 playGame();
